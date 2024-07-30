@@ -13,7 +13,10 @@ export class CategoriesService {
 ) {}
 
 async create(createCategoryDto: CreateCategoryDto): Promise<Category> {
-    const category = this.categoryRepository.create(createCategoryDto);
+    const category = this.categoryRepository.create({
+        ...createCategoryDto,
+        registrionDate: new Date(),
+    });
     return this.categoryRepository.save(category);
 }
 
