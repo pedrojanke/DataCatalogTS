@@ -4,6 +4,8 @@ import { CategoriesModule } from './categories/categories.module';
 import { Category } from './categories/entities/category.entity';
 import { ClassificationsModule } from './classifications/classifications.module';
 import { Classification } from './classifications/entities/classification.entity';
+import { Gender } from './genders/entities/gender.entity';
+import { GendersModule } from './genders/genders.module';
 
 @Module({
     imports: [
@@ -14,11 +16,12 @@ import { Classification } from './classifications/entities/classification.entity
         username: 'root',
         password: 'root',
         database: 'datacatalogts',
-        entities: [Category, Classification],
+        entities: [Category, Classification, Gender],
         synchronize: true,
     }),
     CategoriesModule,
     ClassificationsModule,
+    GendersModule,
 ],
 })
 export class AppModule {}
